@@ -22,11 +22,11 @@
 		});
 		//unSelect
 		$("#unSelectAll").click(function(){
-			$(":input,#all").prop("checked",false);
+			$(":checkbox,#all").prop("checked",false);
 		});
 		//reverse
 		$("#reverse").click(function(){
-			$(":input,#all").each(function(){
+			$(":checkbox,#all").each(function(){
 				$(this).prop("checked",!$(this).prop("checked"));
 			});
 		});
