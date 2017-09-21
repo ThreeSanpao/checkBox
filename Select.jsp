@@ -18,23 +18,31 @@
 		});
 		//selectAll Button
 		$("#selectAll").click(function(){
-			$(":checkbox,#all").prop("checked",true);
+			$(":checkbox:not(#all)").prop("checked",true);
 		});
 		//unSelect
 		$("#unSelectAll").click(function(){
-			$(":checkbox,#all").prop("checked",false);
+			$(":checkbox").prop("checked",false);
 		});
 		//reverse
 		$("#reverse").click(function(){
-			$(":checkbox,#all").each(function(){
+			$(":checkbox:not(#all)").each(function(){
 				$(this).prop("checked",!$(this).prop("checked"));
 			});
+		});
+		//getValue
+		$("#getValue").click(function(){
+			var values=new Array;
+			$(":checkbox:checked:not(#all)").each(function(i){
+				values[i]=$(this).val();
+			});
+			alert(values);
 		});
 	});
 </script>
 </head>
 <body>
-<ul id="list">
+<ul id="lis">
 	<li><label><input type="checkbox" value="1"/>1、时间都去哪儿了</label></li>	
 	<li><input type="checkbox" value="2"/>2、告白气球</li>
 	<li><input type="checkbox" value="3"/>3、浪费</li>
